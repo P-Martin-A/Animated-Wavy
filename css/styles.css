@@ -1,0 +1,108 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(to bottom, #03001e, #7303c0, #ec38bc, #fdeff9);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.content{
+    height: 77vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .title{
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.content .title span{
+    display: inline-block;
+    margin: 0 1rem;
+    animation: title 5s infinite linear;
+}
+
+.wavy, .wavy::before, .wavy::after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 23vh;
+    width: 100%;
+    background: url('../images/wave.png');
+}
+
+.wavy::before, .wavy::after{
+    content: '';
+}
+
+.wavy::before{
+    opacity: .2;
+    animation: wavyBefore 10s infinite linear;
+}
+
+.wavy, .wavy::after{
+    animation: wavy 10s infinite linear;
+}
+
+.wavy::after{
+    animation-delay: 3s;
+    opacity: .5;
+}
+
+@keyframes wavy{
+    0%{
+        background-position: 0;
+    }100%{
+        background-position: 1360px;
+    }
+}
+
+@keyframes wavyBefore{
+    0%{
+        background-position: 1360px;
+    }100%{
+        background-position: 0;
+    }
+}
+ 
+@keyframes title{
+    10%, 25%, 100%{
+        color: #e053bb;
+    }30%, 45%{
+        color: #ff59d3;
+        transform: scale(2);
+    }50%, 65%{
+        color: #c940ff;
+        transform: scale(3);
+        margin: 0 2rem;
+    }70%, 85%{
+        color: #9940ff;
+        margin: 0 3rem;
+    }
+}
+
+@media screen and(max-width: 600px){
+    html{
+        font-size: 10px;
+    }
+}
+
+@media screen and(max-width: 400px){
+    html{
+        font-size: 8px;
+    }
+}
+
+@media screen and(max-width: 200px){
+    html{
+        font-size: 6px;
+    }
+}
+
+
